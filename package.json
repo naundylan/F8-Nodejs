@@ -1,0 +1,31 @@
+{
+  "name": "f8-nodejs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --inspect index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naundylan/nodejs-f8.git"
+  },
+  "keywords": [
+    "nodejs",
+    "namquyen",
+    "nodejs"
+  ],
+  "author": "namquynn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naundylan/nodejs-f8/issues"
+  },
+  "homepage": "https://github.com/naundylan/nodejs-f8#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
