@@ -1,0 +1,1 @@
+<h1> CHÀO MỪNG ĐẾN INFORPAGE</h1>
