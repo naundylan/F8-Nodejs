@@ -7,9 +7,11 @@ const {engine} = require('express-handlebars')
 
 app.use(morgan("combined"))
 
+// static file
+app.use(express.static(path.join(__dirname, 'public')))
+
 
 // template engine
-
 app.engine('hb', engine({
     extname: '.hb'
 }));

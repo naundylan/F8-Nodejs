@@ -1,1 +1,1 @@
-<h1>HEADER NÈ</h1>
+<h2>HEADER NÈ</h2>
