@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
+    "makeup": "lint-staged",
     "start": "nodemon --inspect src/index.js",
     "watch": "sass --embed-source-map --watch src/resources/scss/app.scss src/public/css/app.css",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "lint-staged": {
+    "src/**/*.{js,json,sass}" : "prettier --single-quote --trailing-comma all --tab-width 4 --write"
   },
   "repository": {
     "type": "git",
@@ -28,8 +32,11 @@
     "express-handlebars": "^8.0.1"
   },
   "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
     "morgan": "^1.10.0",
     "nodemon": "^3.1.10",
+    "prettier": "^3.6.2",
     "sass": "^1.89.2"
   }
 }

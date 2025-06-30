@@ -1,20 +1,16 @@
-const info = require('./info')
-const home = require('./home')
-const search = require('./search')
+const info = require('./info');
+const site = require('./site');
 
 function route(app) {
-    // home
-    app.get('/', home)
-
     // info
-    app.get('/info', info)
+    app.use('/info', info);
     // app.post('/info', (req, res) => {
     //     console.log(req.body);
     //     res.render('info')
     // })
 
-    // search
-    app.get('/search', search)
+    // home search
+    app.use('/', site);
 }
 
-module.exports = route
+module.exports = route;
