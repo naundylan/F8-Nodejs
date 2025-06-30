@@ -5,4 +5,4 @@ class InfoController {
     }
 }
 
-module.exports = new InfoController();
+                    module.exports = new InfoController();
