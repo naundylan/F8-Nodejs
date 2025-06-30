@@ -11,6 +11,11 @@
   "lint-staged": {
     "src/**/*.{js,json,sass}" : "prettier --single-quote --trailing-comma all --tab-width 4 --write"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit":"lint-staged"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/naundylan/nodejs-f8.git"
