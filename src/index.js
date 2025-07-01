@@ -5,8 +5,11 @@ const app = express();
 const port = 3000;
 const { engine } = require('express-handlebars');
 const route = require('./routes');
-
+const db = require('./config/db/index');
 // app.use(morgan("combined"))
+
+// database
+db.connect();
 
 // middleWare
 app.use(express.urlencoded());
@@ -23,7 +26,7 @@ app.engine(
     }),
 );
 app.set('view engine', 'hb');
-app.set('views', path.join(__dirname, 'resources/views'));
+app.set('views', path.join(__dirname, 'resources', 'views'));
 
 route(app);
 
