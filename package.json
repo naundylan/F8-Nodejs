@@ -6,15 +6,15 @@
     "makeup": "lint-staged",
     "start": "nodemon --inspect src/index.js",
     "watch": "sass --embed-source-map --watch src/resources/scss/app.scss src/public/css/app.css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "exit 0"
   },
   "lint-staged": {
-    "src/**/*.{js,json,sass}" : "prettier --single-quote --trailing-comma all --tab-width 4 --write"
+    "src/**/*.{js,json,sass}": "prettier --single-quote --trailing-comma all --tab-width 4 --write"
   },
   "husky": {
     "hooks": {
-      "pre-commit":"lint-staged",
-      "prepare": "husky"
+      "pre-commit": "lint-staged",
+      "prepare": "husky || true"
     }
   },
   "repository": {
