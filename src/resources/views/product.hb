@@ -5,7 +5,7 @@
         {{#each prod}}
         <div class="card" style="width: 18rem;">
             <a href="/product/{{this.slug}}">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="{{this.img}}" class="card-img-top" alt="..." style="height: 10rem;">
             </a>
             <div class="card-body">
                 <a href="/product/{{this.slug}}">
@@ -17,4 +17,8 @@
         </div>
         {{/each}}
     </div>
+</div>
+
+<div class="row">
+    <a href="/product/create">Thêm mới</a>
 </div>

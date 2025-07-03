@@ -3,6 +3,19 @@ const { mutipleMongooseToObject } = require('../../util/mongoose');
 const { mongooseToObject } = require('../../util/mongoose');
 
 class ProductController {
+    // POST /store
+    store(req, res) {
+        // res.json(req.body)
+        const docs = new product(req.body);
+        docs.save();
+        res.render('products/store');
+    }
+
+    // GET /create
+    create(req, res) {
+        res.render('products/create');
+    }
+
     // GET /:slug
     show(req, res, next) {
         product
