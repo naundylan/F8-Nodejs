@@ -1,14 +1,18 @@
 const product = require('../../models/product');
 const { mutipleMongooseToObject } = require('../../util/mongoose');
 const { mongooseToObject } = require('../../util/mongoose');
+const slugify = require('slugify');
 
 class ProductController {
     // POST /store
     store(req, res) {
         // res.json(req.body)
-        const docs = new product(req.body);
-        docs.save();
-        res.render('products/store');
+        const data = req.body;
+        data.slug = slugify(data.title, { lower: true });
+        const docs = new product(data);
+        docs.save()
+            .then(() => res.render('products/store'))
+            .catch((err) => res.send(err));
     }
 
     // GET /create

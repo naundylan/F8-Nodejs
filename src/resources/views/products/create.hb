@@ -7,16 +7,12 @@
             <input type="text" class="form-control" id="title" name="title">
         </div>
         <div class="mb-3">
-            <label for="discription" class="form-label">Nhập Discription</label>
-            <input type="text" class="form-control" id="discription" name="discription">
+            <label for="description" class="form-label">Nhập description</label>
+            <input type="text" class="form-control" id="description" name="description">
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Nhập Price</label>
-            <input type="text" class="form-control" id="price" name="price">
-        </div>
-        <div class="mb-3">
-            <label for="slug" class="form-label">Nhập Slug</label>
-            <input type="text" class="form-control" id="slug" name="slug">
+            <input type="text" class="form-control" id="price" name="price">    
         </div>
         <div class="mb-3">
             <label for="img" class="form-label">Nhập link ảnh</label>

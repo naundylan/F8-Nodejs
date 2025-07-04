@@ -5,11 +5,11 @@ const ObjectId = Schema.ObjectId;
 
 const product = new Schema(
     {
-        title: { type: String, min: 50, require: true },
-        description: { type: String, max: 255 },
-        price: { type: Number, default: 0, require: true },
-        slug: { type: String, max: 100 },
-        image: { type: String, max: 255 },
+        title: { type: String, minlength: 10, required: true },
+        description: { type: String, maxlength: 255 },
+        price: { type: Number, default: 0, required: true },
+        slug: { type: String, maxlength: 100, unique: true, required: true },
+        img: { type: String, maxlength: 500 },
     },
     {
         timestamps: true,

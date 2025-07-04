@@ -9,7 +9,7 @@
             <h1>{{prod.title}}</h1>
             <img src="{{prod.img}}" alt="" style="width: 100%; height: 30rem">
             <p>Mô tả: {{prod.description}}</p>
-            <p>Ngày đăng: {{prod.date}}</p>
+            <p>Ngày đăng: {{prod.createdAt}}</p>
             <p>Giá: {{prod.price}}</p>
         </div>
     </div>
