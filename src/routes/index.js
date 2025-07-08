@@ -1,6 +1,7 @@
 const info = require('./info');
 const site = require('./site');
 const product = require('./product');
+const me = require('./me');
 
 function route(app) {
     // info
@@ -9,6 +10,8 @@ function route(app) {
     //     console.log(req.body);
     //     res.render('info')
     // })
+
+    app.use('/me', me);
 
     app.use('/product', product);
 

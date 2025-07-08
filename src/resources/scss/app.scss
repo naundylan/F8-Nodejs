@@ -1,9 +1,14 @@
-@import '_variables';
+// @import '_variables';
 h1 {
     font: 300;
-    color: $red-color;
+    color: red;
 }
 h2 {
     font: 300;
-    color: $red-color;
+    color: red;
+}
+
+// header
+.backgrcl {
+    background-color: aqua !important;
 }

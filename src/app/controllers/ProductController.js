@@ -20,6 +20,18 @@ class ProductController {
         res.render('products/create');
     }
 
+    // GET /:id/edit
+    edit(req, res, next) {
+        product
+            .findOne({ _id: req.params.id })
+            .then((prod) =>
+                res.render('products/edit', {
+                    prod: mongooseToObject(prod),
+                }),
+            )
+            .catch(next);
+    }
+
     // GET /:slug
     show(req, res, next) {
         product

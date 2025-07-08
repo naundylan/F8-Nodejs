@@ -23,6 +23,9 @@ app.engine(
     'hb',
     engine({
         extname: '.hb',
+        helpers: {
+            sum: (a, b) => a + b,
+        },
     }),
 );
 app.set('view engine', 'hb');
