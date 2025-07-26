@@ -1,25 +1,21 @@
 {
   "name": "f8-nodejs",
   "version": "1.0.0",
+  "type": "module",
   "main": "src/index.js",
   "scripts": {
     "makeup": "lint-staged",
     "start": "nodemon --inspect src/index.js",
     "watch": "sass --embed-source-map --watch src/resources/scss/app.scss src/public/css/app.css",
     "test": "exit 0",
-    "lint": "eslint src/**/*.js"
+    "lint": "eslint src/**/*.js",
+    "prepare": "husky install"
   },
   "lint-staged": {
-  "src/**/*.{js,json,sass}": [
-    "eslint --fix",
-    "prettier --single-quote --trailing-comma all --tab-width 4 --write"
-  ]
-},
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "prepare": "husky || true"
-    }
+    "src/**/*.{js,json,sass}": [
+      "eslint --fix",
+      "prettier --single-quote --trailing-comma all --tab-width 4 --write"
+    ]
   },
   "repository": {
     "type": "git",
@@ -51,7 +47,7 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.3",
     "globals": "^16.3.0",
-    "husky": "^9.1.7",
+    "husky": "^8.0.3",
     "lint-staged": "^16.1.2",
     "morgan": "^1.10.0",
     "nodemon": "^3.1.10",
