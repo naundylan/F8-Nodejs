@@ -19,6 +19,7 @@ class ProductController {
     create(req, res) {
         res.render('products/create');
     }
+    
 
     // GET /:id/edit
     edit(req, res, next) {
@@ -29,7 +30,14 @@ class ProductController {
                     prod: mongooseToObject(prod),
                 }),
             )
-            .catch(next);
+            // .catch(next);
+    }
+
+    // PUT /:id
+    update(req, res, next) {
+        product.findByIdAndUpdate( { _id : req.params.id }, req.body)
+            .then(() => res.redirect('/me/stored/products'))
+            .catch(next)
     }
 
     // GET /:slug
@@ -40,8 +48,26 @@ class ProductController {
                 res.render('products/show', { prod: mongooseToObject(prod) });
             })
             .catch(next);
-        // res.send('COURSE DETAIL!! - ' + req.params.slug)
     }
+
+    // DELETE /:id
+    delete(req, res, next) {
+        product.delete({ _id : req.params.id})
+            .then(() => res.redirect('/me/stored/products'))
+            .catch(next)
+    }
+
+    // PATCH /:id/restore
+    async restore(req, res, next) {
+        try {
+            await product.restore({ _id : req.params.id})
+            res.redirect('/me/stored/products');
+        } catch (err) {
+            console.error('[ERROR] Restore failed:', err);
+            next(err);
+        }
+    }
+
 
     // GET /
     async index(req, res) {

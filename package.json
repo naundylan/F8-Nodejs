@@ -6,11 +6,15 @@
     "makeup": "lint-staged",
     "start": "nodemon --inspect src/index.js",
     "watch": "sass --embed-source-map --watch src/resources/scss/app.scss src/public/css/app.css",
-    "test": "exit 0"
+    "test": "exit 0",
+    "lint": "eslint src/**/*.js"
   },
   "lint-staged": {
-    "src/**/*.{js,json,sass}": "prettier --single-quote --trailing-comma all --tab-width 4 --write"
-  },
+  "src/**/*.{js,json,sass}": [
+    "eslint --fix",
+    "prettier --single-quote --trailing-comma all --tab-width 4 --write"
+  ]
+},
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
@@ -36,10 +40,17 @@
   "dependencies": {
     "express": "^5.1.0",
     "express-handlebars": "^8.0.1",
+    "method-override": "^3.0.0",
     "mongoose": "^8.16.1",
+    "mongoose-delete": "^1.0.2",
     "slugify": "^1.6.6"
   },
   "devDependencies": {
+    "@eslint/js": "^9.31.0",
+    "eslint": "^9.31.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.3",
+    "globals": "^16.3.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.2",
     "morgan": "^1.10.0",

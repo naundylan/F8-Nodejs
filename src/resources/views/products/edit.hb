@@ -1,7 +1,7 @@
 <div class="mt-4">
-    <h1>SỬA SẢN PHẨM</h1>
+    <h1>CHỈNH SỬA SẢN PHẨM</h1>
 
-    <form method="POST" action="/product/store">
+    <form method="POST" action="/product/{{prod._id}}?_method=PUT">
         <div class="mb-3">
             <label for="title" class="form-label">Nhập Title</label>
             <input type="text" class="form-control" id="title" name="title" value="{{prod.title}}">

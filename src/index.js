@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const path = require('path');
 const app = express();
 const port = 3000;
+const methodOverride = require('method-override')
 const { engine } = require('express-handlebars');
 const route = require('./routes');
 const db = require('./config/db/index');
@@ -17,6 +18,9 @@ app.use(express.json());
 
 // static file
 app.use(express.static(path.join(__dirname, 'public')));
+
+// method override
+app.use(methodOverride('_method'))
 
 // template engine
 app.engine(
