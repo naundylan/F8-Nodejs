@@ -4,7 +4,7 @@ const mongooseDelete = require('mongoose-delete');
 const Schema = mongoose.Schema;
 
 const ProductSchema = new Schema({
-    title: { type: String, minlength: 5, required: true },
+    title: { type: String, required: true },
     description: { type: String, maxlength: 255 },
     price: { type: Number, default: 0, required: true },
     slug: { type: String, maxlength: 100, unique: true, required: true },

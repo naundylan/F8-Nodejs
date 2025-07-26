@@ -8,6 +8,13 @@ class MeController {
 
     // GET /me/stored/products
     async control(req, res) {
+
+        product.countDocumentsWithDeleted({ deleted: true })
+            .then(count => console.log('Số sản phẩm đã bị xóa mềm:', count))
+            .catch(err => console.error(err));
+
+
+
         const products = await product.find({ deleted: false });
         res.render('me/store-product', {
             products: mutipleMongooseToObject(products),

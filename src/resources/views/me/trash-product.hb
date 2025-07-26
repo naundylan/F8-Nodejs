@@ -12,7 +12,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        If you want to delete this product, please choose "Delete"!
+        Are you sure about your deletion?, this action can't be restore! 
       </div>
       <div class="modal-footer">
         <button id="btn-delete-product" type="button" class="btn btn-danger">Delete</button>    
@@ -79,7 +79,7 @@
 
         // When the second click
         btn.addEventListener('click', function () {
-            deleteForm.action = '/product/' + deleteButton + '?_method=DELETE'
+            deleteForm.action = '/product/' + deleteButton + '/force?_method=DELETE'
             deleteForm.submit()
         })
 

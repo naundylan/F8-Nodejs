@@ -1,7 +1,7 @@
 {
   "name": "f8-nodejs",
   "version": "1.0.0",
-  "type": "module",
+  "type": "commonjs",
   "main": "src/index.js",
   "scripts": {
     "makeup": "lint-staged",

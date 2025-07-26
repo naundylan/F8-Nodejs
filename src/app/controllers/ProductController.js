@@ -57,6 +57,13 @@ class ProductController {
             .catch(next)
     }
 
+    // DELETE /:id/force
+    forceDelete(req, res, next) {
+        product.deleteOne({ _id : req.params.id})
+            .then(() => res.redirect('/me/stored/products'))
+            .catch(next)
+    }
+
     // PATCH /:id/restore
     async restore(req, res, next) {
         try {

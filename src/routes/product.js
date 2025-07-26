@@ -7,6 +7,7 @@ router.post('/store', productController.store);
 router.get('/create', productController.create);
 router.get('/:id/edit', productController.edit);
 router.delete('/:id', productController.delete);
+router.delete('/:id/force', productController.forceDelete);
 router.patch('/:id/restore', productController.restore);
 router.put('/:id', productController.update);
 router.get('/:slug', productController.show);
