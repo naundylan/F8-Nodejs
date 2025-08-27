@@ -66,9 +66,14 @@ class ProductController {
 
     // POST /handle-form-actions
     handleFormAction(req, res, next) {
-        product.deleteOne({ _id : req.params.id})
-            .then(() => res.redirect('/me/stored/products'))
-            .catch(next)
+        switch(req.body.action) {
+            case "delete":
+                product.delete({ _id: { $in: req.body['productIds[]'] } })
+                    .then(() => res.redirect('/me/stored/products'))
+                    .catch(next);
+                break;
+            default: res.json({ message: 'Action is invalid!!!' });
+        }
     }
 
     // PATCH /:id/restore

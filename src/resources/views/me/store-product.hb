@@ -18,7 +18,7 @@
 </div>
 
 
-<form class="mt-4" name="container-form" method="GET" action="/products/handle-form-actions">
+<form class="mt-4" name="container-form" method="POST" action="/product/handle-form-actions">
   <span class="">
     <h3>My products</h3>
     <a href="/me/trash/products">
@@ -37,11 +37,11 @@
         </label>
       </div>
 
-      <select class="form-select form-select-sm select-all-options select" aria-label="Default select example">
+      <select class="form-select form-select-sm select-all-options select" aria-label="Default select example" name="action">
         <option selected>Select Options</option>
-        <option value="1">Xóa</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+        <option value="delete">Delete</option>
+        <option value="edit">Edit</option>
+        <option value="view">View</option>
       </select>
 
 
@@ -135,11 +135,20 @@
           }
         }
 
-        // checked btn clicked
-        {{!-- execBtn.click(function(e) {
-          e.preventDefault()
-          console.log(12)
-        }) --}}
+        // Execute button clicked
+        execBtn.click(function(e) {
+          var selectedAction = $('.select-all-options').val();
+          if (selectedAction === 'delete') {
+              // Ngăn form gửi đi mặc định, sau đó tự gửi lại với phương thức đúng
+              e.preventDefault();
+              actionForm.action = '/product/handle-form-actions?_method=DELETE';
+              actionForm.submit();
+          } else {
+              // Ngăn form gửi đi nếu hành động không phải là 'delete'
+              e.preventDefault();
+              alert('Vui lòng chọn tùy chọn "Delete" để thực thi.');
+          }
+        })
 
         // When the first click
         $('#exampleModal').on('show.bs.modal', function (event) {
