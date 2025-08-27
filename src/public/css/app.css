@@ -1,15 +1,24 @@
 h1 {
   font: 300;
-  color: red;
+  color: rgb(255, 11, 251);
 }
 
 h2 {
   font: 300;
-  color: red;
+  color: rgb(179, 220, 86);
 }
 
 .backgrcl {
-  background-color: aqua !important;
+  background-color: rgb(28, 255, 12) !important;
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../resources/scss/app.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AACA;EACI;EACA;;;AAEJ;EACI;EACA;;;AAIJ;EACI%22,%22file%22:%22app.css%22%7D */
+.select-all-options {
+  margin: 0px 16px;
+  width: 200px;
+}
+
+.form-check-input {
+  border: 1px solid rgb(68, 68, 68);
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../resources/scss/app.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AACA;EACI;EACA;;;AAEJ;EACI;EACA;;;AAIJ;EACI;;;AAMJ;EACI;EACA;;;AAGJ;EACI%22,%22file%22:%22app.css%22%7D */

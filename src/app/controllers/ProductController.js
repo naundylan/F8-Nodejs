@@ -64,6 +64,13 @@ class ProductController {
             .catch(next)
     }
 
+    // POST /handle-form-actions
+    handleFormAction(req, res, next) {
+        product.deleteOne({ _id : req.params.id})
+            .then(() => res.redirect('/me/stored/products'))
+            .catch(next)
+    }
+
     // PATCH /:id/restore
     async restore(req, res, next) {
         try {

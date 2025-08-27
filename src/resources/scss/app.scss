@@ -1,14 +1,26 @@
 // @import '_variables';
 h1 {
     font: 300;
-    color: red;
+    color: rgb(255, 11, 251);
 }
 h2 {
     font: 300;
-    color: red;
+    color: rgb(179, 220, 86);
 }
 
 // header
 .backgrcl {
-    background-color: aqua !important;
+    background-color: rgb(28, 255, 12) !important;
+
+}
+
+
+// Me
+.select-all-options {
+    margin: 0px 16px;
+    width: 200px;
+}
+
+.form-check-input {
+    border: 1px solid rgb(68, 68, 68);
 }

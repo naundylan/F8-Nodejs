@@ -1,6 +1,8 @@
 <div class="row">
   <a href="/me/stored/products">Go Back</a>
   <h3>My deleted products</h3>
+
+  
 </div>
 
 <!-- Modal -->
