@@ -45,7 +45,7 @@
       </select>
 
 
-      <button class="btn btn-primary btn-sm execBtn disabled" type="submit">Execute</button>
+      <button class="btn btn-primary btn-sm execBtn" disabled type="submit">Execute</button>
     </div>
   </span>
 
@@ -128,10 +128,10 @@
         function renderCheckedBtn() {
           var checkedCount = $('input[name="productIds[]"]:checked').length
           if(checkedCount) {
-            execBtn.removeClass('disabled')
+            execBtn.removeAttr('disabled')
           }
           else {
-            execBtn.addClass('disabled')
+            execBtn.setAttribute('disabled', 'disabled')
           }
         }
 
