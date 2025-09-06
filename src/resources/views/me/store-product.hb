@@ -55,7 +55,10 @@
           <tr>
               <th class="colspan"></th>
               <th scope="col">STT</th>
-              <th scope="col">Title</th>
+              <th scope="col">
+                Title
+                {{{sortable 'title' _sort}}}
+              </th>
               <th scope="col">Description</th>
               <th scope="col">Price</th>
               <th class="colspan"></th>

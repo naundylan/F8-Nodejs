@@ -8,10 +8,20 @@ class MeController {
 
     // GET /me/stored/products
     async control(req, res, next) {
+        
+        let productQuery = product.find({ deleted: false })
+
+        if( '_sort' in req.query ) {
+            const sortObject = {};
+            const sortColumn = req.query.column;
+            const sortType = req.query.type === 'desc' ? -1 : 1;
+            sortObject[sortColumn] = sortType;
+            productQuery = productQuery.sort(sortObject);
+        }
 
         try {
             const [products, deletedCount] = await Promise.all([
-                product.find({ deleted: false }), // .lean() giúp lấy plain JavaScript objects nhanh hơn
+                productQuery,
                 product.countDocumentsWithDeleted({ deleted: true })
             ]);
 
@@ -24,28 +34,6 @@ class MeController {
         } catch (error) {
             next(error);
         }
-
-        // Promise.all(([product.find({}), product.countDocumentsWithDeleted({ deleted: true })]))
-        //     .then(([products, deletedCount]) =>
-        //         res.render('me/store-courses', {
-        //             deletedCount,
-        //             products: mutipleMongooseTo0bject(products),
-        //         })
-        //     )
-        //     .catch(next);
-
-        // product.countDocumentsWithDeleted({ deleted: true })
-        //     .then(count => res.render('me/store-product', {
-            
-        //     }))
-        //     .catch(err => console.error(err));
-
-
-
-        // const products = await product.find({ deleted: false });
-        // res.render('me/store-product', {
-        //     products: mutipleMongooseToObject(products),
-        // });
     }
 
     // GET /me/trash/products
