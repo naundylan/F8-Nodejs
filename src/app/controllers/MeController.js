@@ -8,20 +8,9 @@ class MeController {
 
     // GET /me/stored/products
     async control(req, res, next) {
-        
-        let productQuery = product.find({ deleted: false })
-
-        if( '_sort' in req.query ) {
-            const sortObject = {};
-            const sortColumn = req.query.column;
-            const sortType = req.query.type === 'desc' ? -1 : 1;
-            sortObject[sortColumn] = sortType;
-            productQuery = productQuery.sort(sortObject);
-        }
-
         try {
             const [products, deletedCount] = await Promise.all([
-                productQuery,
+                product.find({ deleted: false }).sortable(req),
                 product.countDocumentsWithDeleted({ deleted: true })
             ]);
 

@@ -59,8 +59,14 @@
                 Title
                 {{{sortable 'title' _sort}}}
               </th>
-              <th scope="col">Description</th>
-              <th scope="col">Price</th>
+              <th scope="col">
+                Description
+                {{{sortable 'description' _sort}}}
+              </th>
+              <th scope="col">
+                Price
+                {{{sortable 'price' _sort}}}
+              </th>
               <th class="colspan"></th>
           </tr>
       </thead>

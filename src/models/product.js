@@ -13,6 +13,18 @@ const ProductSchema = new Schema({
     timestamps: true,
 });
 
+// Custom query helpers
+ProductSchema.query.sortable = function (req) {
+    if( '_sort' in req.query ) {
+        const sortObject = {};
+        const sortColumn = req.query.column;
+        const sortType = req.query.type === 'desc' ? -1 : 1;
+        sortObject[sortColumn] = sortType;
+        return this.sort(sortObject);
+    }
+    else return this;
+}
+
 ProductSchema.plugin(mongooseDelete, {
     deletedAt: true,
     overrideMethods: 'all',
